@@ -42,14 +42,15 @@ public class CanvasController implements Initializable {
     }
 
     private void keyPressed(KeyEvent keyEvent) {
+        System.out.println(System.currentTimeMillis() + " - Key: " + keyEvent.getCode());
         AudioClip sound = keyToSound.get(keyEvent.getCode());
-        if(sound.isPlaying()) {
-            return;
-        }
-        else {
+        //if(sound.isPlaying()) {
+        //    return;
+        //} else {
+            System.out.println(System.currentTimeMillis() + " - Start play");
             sound.play();
-        }
-
+            System.out.println(System.currentTimeMillis() + " - Is playing");
+        //}
     }
 
     private void createAudioClip() {
